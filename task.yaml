@@ -1,0 +1,4 @@
+name: SImple add function
+description: >
+  This task is to create a simple add function that takes two numbers as input and returns their sum.
+  The function should be named `add_numbers` and should handle both integer and float inputs.
