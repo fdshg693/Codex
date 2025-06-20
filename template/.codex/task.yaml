@@ -1,0 +1,4 @@
+name: Simple Task
+description: >
+  This task is to make simple change to the code.
+  pring "Hello, World!" 2 times.

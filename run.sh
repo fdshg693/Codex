@@ -29,12 +29,6 @@ else
   echo "There are $max_run_number runs."
 fi
 
-# Confirm creation unless in auto mode
-if [ "$auto_mode" = false ]; then
-  read -p "Create run_$new_run_number? (Y/N): " choice
-  [[ "$choice" != [Yy] ]] && echo "Exiting." && exit 1
-fi
-
 # activate the virtual environment if it exists
 if [ -d "../.venv" ]; then
   source ../.venv/bin/activate
@@ -48,7 +42,7 @@ mkdir "run_$new_run_number"
 
 # Check if the template directory exists and copy its contents
 if [ -d "../template" ]; then
-  cp -r ../template/* "run_$new_run_number"
+  cp -a ../template/. "run_$new_run_number"
   echo "Initialized run_$new_run_number from template/"
 else
   echo "Template directory does not exist. Skipping initialization from template."
@@ -56,5 +50,11 @@ fi
 
 cd "run_$new_run_number"
 
-# Launch Codex (moved to setup.py)
-python3 ../../init/setup.py
+# 戻り値を受け取って、そのコードを実行
+code=$(python3 ../../run.py "$@")
+echo "Code to execute: $code"
+# cdを出力
+cd_path=$(pwd)
+echo "Current Directory: $cd_path"
+# Execute the code
+eval "$code"
