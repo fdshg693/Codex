@@ -1,16 +1,8 @@
-# Enable auto-confirm mode if flag is passed
-auto_mode=false
-[[ "$1" == "--auto-confirm" ]] && auto_mode=true
-
 # Create the runs directory if it doesn't exist
 mkdir -p runs
 
 # Move into the working directory
 cd runs || exit 1
-
-# Grab task name for logging
-task_name=$(yq -o=json '.' ../task.yaml | jq -r '.name')
-echo "Checking for runs for task: $task_name"
 
 # Find existing run_N directories
 shopt -s nullglob
@@ -50,11 +42,7 @@ fi
 
 cd "run_$new_run_number"
 
-# 戻り値を受け取って、そのコードを実行
-code=$(python3 ../../run.py "$@")
-echo "Code to execute: $code"
-# cdを出力
-cd_path=$(pwd)
-echo "Current Directory: $cd_path"
-# Execute the code
-eval "$code"
+# 受け取った引数をCODEXコマンドにそのまま渡す
+CODEX "$@"
+
+

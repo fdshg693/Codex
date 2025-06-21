@@ -17,7 +17,6 @@ def copy_files(src_dir, dst_dir):
 
 
 if __name__ == "__main__":
-
     root_dir = Path(__file__).parent.parent
     src_directories = root_dir / "runs"
     # src_directoriesの中から最新のディレクトリを取得

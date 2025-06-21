@@ -1,4 +1,6 @@
 name: Simple Task
-description: >
-  This task is to make simple change to the code.
-  pring "Hello, World!" 2 times.
+description: 
+  簡単な足し算・引き算が出来る関数を作ってください
+  使い方をREADMEに書いてください
+guid:
+  code according to `.codex/resource/python _coding_style.md`
