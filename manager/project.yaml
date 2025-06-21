@@ -1,0 +1,6 @@
+task name: create a rock-paper-scissors game
+description: |
+  create a CLI-based rock-paper-scissors game in Python.
+  The game should allow two players to play against each other.
+  The game should be able to handle invalid inputs and provide appropriate feedback.
+status: Not Started

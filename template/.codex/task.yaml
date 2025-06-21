@@ -1,6 +1,4 @@
-name: Simple Task
-description: 
-  簡単な足し算・引き算が出来る関数を作ってください
-  使い方をREADMEに書いてください
-guid:
-  code according to `.codex/resource/python _coding_style.md`
+ id: 1
+ task_description: "Design the game architecture: define classes or functions for game logic"
+ status: In Progress
+ assigned_agent: coding_agent

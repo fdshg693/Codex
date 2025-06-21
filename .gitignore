@@ -17,3 +17,10 @@ __pycache__/
 .pytest_cache/
 # .ruffcache
 .ruff_cache/
+
+# managerディレクトリの中で、manager/MANAGER_AGENT.md以外を無視する
+manager/*
+# manager/MANAGER_AGENT.mdは無視しない
+!manager/MANAGER_AGENT.md
+!manager/all_agents.yaml
+!manager/project.yaml
